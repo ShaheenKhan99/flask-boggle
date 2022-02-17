@@ -43,7 +43,7 @@ class FlaskTests(TestCase):
         """ Test if word is on the board"""
 
         self.client.get('/')
-        response = self.client.get('/check-word/word=absent')
+        response = self.client.get('/check-word?word=absent')
         self.assertEqual(response.json['result'], 'not-on-board')
 
     def non_english_word(self):
